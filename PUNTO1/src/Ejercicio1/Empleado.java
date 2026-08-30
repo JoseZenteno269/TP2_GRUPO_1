@@ -1,4 +1,4 @@
-package dominio;
+package Ejercicio1;
 
 import java.time.LocalDate;
 

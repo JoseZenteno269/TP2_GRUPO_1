@@ -1,4 +1,4 @@
-package dominio;
+package Ejercicio1;
 
 import java.time.LocalDate;
 
@@ -37,6 +37,50 @@ public class Persona {
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.email = email;
+	}
+	
+	
+	// Metodo estatico para verificar DNI
+	
+	public static boolean VerificarDNI(String Dni) throws ExVerificarDNI
+	{
+		boolean auxDNI = false;
+		boolean auxLetras = false;
+		
+		
+		for(int i=0;i<Dni.length(); i++)
+		{
+			char c = Dni.charAt(i);
+			
+			if(Dni.length() == 8)
+			{
+				auxDNI = true;
+			}
+			
+			if(Character.isLetter(c))
+			{
+				auxLetras = true;
+			}
+			
+			if(auxDNI == false)
+			{
+				throw new ExVerificarDNI();
+			}
+			
+			if(auxLetras == true)
+			{
+				throw new ExVerificarDNI();
+			}
+			
+			if(auxDNI && auxLetras == false)
+			{
+				return true;
+			}
+			
+			return false;
+		}
+		
+		
 	}
 	
 	// SETTERS Y GETTERS
