@@ -44,43 +44,28 @@ public class Persona {
 	
 	public static boolean VerificarDNI(String Dni) throws ExVerificarDNI
 	{
-		boolean auxDNI = false;
-		boolean auxLetras = false;
+		Boolean auxDNI = Dni.length() == 8; 
+		Boolean auxLetras = true;
 		
-		
-		for(int i=0;i<Dni.length(); i++)
-		{
-			char c = Dni.charAt(i);
-			
-			if(Dni.length() == 8)
-			{
-				auxDNI = true;
-			}
-			
+		for (char c : Dni.toCharArray()) {
 			if(Character.isLetter(c))
 			{
-				auxLetras = true;
+				auxLetras = false;
+				break; 
 			}
-			
-			if(auxDNI == false)
-			{
-				throw new ExVerificarDNI();
-			}
-			
-			if(auxLetras == true)
-			{
-				throw new ExVerificarDNI();
-			}
-			
-			if(auxDNI && auxLetras == false)
-			{
-				return true;
-			}
-			
-			return false;
 		}
 		
+		if(!auxDNI || !auxLetras)
+		{
+			throw new ExVerificarDNI();
+		}
 		
+		if(auxDNI && auxLetras)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 	
 	// SETTERS Y GETTERS
