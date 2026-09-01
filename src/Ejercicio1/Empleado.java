@@ -50,6 +50,14 @@ public class Empleado extends Persona implements Comparable<Empleado> {
 
 	@Override
 	public int compareTo(Empleado o) {
-		return 1;
+		if(Integer.parseInt(o.getDni()) == Integer.parseInt(this.getDni())){
+			return 0;
+		}
+		
+		if(Integer.parseInt(o.getDni()) < Integer.parseInt(this.getDni())){
+			return 1;
+		}
+		
+		return -1;
 	}
 }
