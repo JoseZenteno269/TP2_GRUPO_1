@@ -126,4 +126,16 @@ public class Persona {
 				dni, nombre, apellido, fechaNacimiento, genero, direccion, telefono, email); 
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) return true;
+	    if (obj == null || getClass() != obj.getClass()) return false;
+	    Persona otra = (Persona) obj;
+	    return dni.equals(otra.dni);
+	}
+
+	@Override
+	public int hashCode() {
+	    return dni.hashCode();
+	}
 }
