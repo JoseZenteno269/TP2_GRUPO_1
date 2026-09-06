@@ -26,5 +26,10 @@ public class Polideportivo extends Edificio implements Instalacion_Deportiva{
 	public int getTipoDeInstalacion() {
 		return 0;
 	}
+
+	@Override
+	public String toString() {
+		return "Polideportivo [nombre=" + nombre + "]";
+	}
 	
 }
