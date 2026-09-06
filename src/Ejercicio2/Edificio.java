@@ -6,6 +6,10 @@ public class Edificio {
 	
 	//Constructor
 	
+	public Edificio() {
+		superficie = 0; 
+	}
+	
 	public Edificio(double Superficie)
 	{
 		this.superficie = Superficie;
@@ -23,12 +27,8 @@ public class Edificio {
 		return superficie;
 	}
 
-
 	public void setSuperficie(double superficie) {
 		this.superficie = superficie;
 	}
-	
-	
-	
 	
 }
