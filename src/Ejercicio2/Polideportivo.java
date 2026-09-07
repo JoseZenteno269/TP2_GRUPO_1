@@ -24,7 +24,16 @@ public class Polideportivo extends Edificio implements Instalacion_Deportiva{
 
 	@Override
 	public int getTipoDeInstalacion() {
-		return 0;
+		double superficie = super.GetSuperFicieEdificio(); 
+		
+		if(superficie <= 200)
+			return 1; 
+		else if(superficie <= 500)
+			return 2; 
+		else if(superficie <= 1000)
+			return 3;
+		
+		return 0; 
 	}
 
 	@Override

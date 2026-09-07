@@ -26,12 +26,10 @@ public class mainEjercicio2 {
 
             if (edificio instanceof Polideportivo) {
                 Polideportivo polideportivo = (Polideportivo) edificio;
-                System.out.println("Polideportivo - Nombre: " + polideportivo.getNombre()
-                        + " - Superficie: " + polideportivo.getSuperficie() + " m2");
+                System.out.println("Polideportivo - Nombre: " + polideportivo.getNombre() + " - Superficie: " + polideportivo.getSuperficie() + " m2" + " Tipo: " + polideportivo.getTipoDeInstalacion());
             } else if (edificio instanceof EdificioOficinas) {
                 EdificioOficinas edificioOficinas = (EdificioOficinas) edificio;
-                System.out.println("Edificio de Oficinas - Superficie: " + edificioOficinas.getSuperficie()
-                        + " m2 - Numero de Oficinas: " + edificioOficinas.getNumeroDeOficinas());
+                System.out.println("Edificio de Oficinas - Superficie: " + edificioOficinas.getSuperficie() + " m2 - Numero de Oficinas: " + edificioOficinas.getNumeroDeOficinas());
             }
         }
 
