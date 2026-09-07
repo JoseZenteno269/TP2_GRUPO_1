@@ -1,6 +1,7 @@
 package Ejercicio2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class mainEjercicio2 {
@@ -18,6 +19,21 @@ public class mainEjercicio2 {
         edificios.add(new EdificioOficinas(125, 1));
         edificios.add(new EdificioOficinas(340, 2));
 
+        Iterator<Edificio> iterador = edificios.iterator();
+
+        while (iterador.hasNext()) {
+            Edificio edificio = iterador.next();
+
+            if (edificio instanceof Polideportivo) {
+                Polideportivo polideportivo = (Polideportivo) edificio;
+                System.out.println("Polideportivo - Nombre: " + polideportivo.getNombre()
+                        + " - Superficie: " + polideportivo.getSuperficie() + " m2");
+            } else if (edificio instanceof EdificioOficinas) {
+                EdificioOficinas edificioOficinas = (EdificioOficinas) edificio;
+                System.out.println("Edificio de Oficinas - Superficie: " + edificioOficinas.getSuperficie()
+                        + " m2 - Numero de Oficinas: " + edificioOficinas.getNumeroDeOficinas());
+            }
+        }
 
     }
 
